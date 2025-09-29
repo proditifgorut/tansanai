@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
 import { useSettings, AppSettings } from '../hooks/useSettings';
 import { Input } from '../components/ui/input';
 import { Button } from '../components/ui/button';
@@ -31,7 +32,7 @@ const Settings: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     saveSettings(formState);
-    alert('Settings saved successfully!');
+    toast.success('Settings saved successfully!');
   };
 
   const isSupabaseConnected = !!formState.supabaseUrl && !!formState.supabaseAnonKey;

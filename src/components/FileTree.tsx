@@ -60,6 +60,35 @@ createRoot(document.getElementById('root')!).render(
     <App />
   </StrictMode>,
 );`
+  },
+  'index.html': {
+    language: 'html',
+    content: `<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tansan AI dev - Build with AI</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>`
+  },
+  'tailwind.config.js': {
+    language: 'javascript',
+    content: `/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: ["class"],
+  content: [
+    './src/**/*.{ts,tsx}',
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}`
   }
 };
 
@@ -93,7 +122,9 @@ const FileTree: React.FC = () => {
       { name: 'App.tsx', type: 'file', path: 'src/App.tsx' },
       { name: 'main.tsx', type: 'file', path: 'src/main.tsx' },
     ]},
+    { name: 'index.html', type: 'file', path: 'index.html' },
     { name: 'package.json', type: 'file', path: 'package.json' },
+    { name: 'tailwind.config.js', type: 'file', path: 'tailwind.config.js' },
     { name: 'tsconfig.json', type: 'file', path: 'tsconfig.json' },
   ]
 
